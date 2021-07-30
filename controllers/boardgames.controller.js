@@ -34,7 +34,7 @@ export const updateBoardGameById = async (req, res) => {
 }
 export const deleteBoardGameById = async (req, res) => {
     const ID = req.params.id
-    await pool.query(`DELETE * FROM BOARDGAMES WHERE ID=${ID}`, function(error, results){
+    await pool.query(`DELETE FROM BOARDGAMES WHERE ID=${ID}`, function(error, results){
         if(error) {throw error;}
         res.json(results)
     })

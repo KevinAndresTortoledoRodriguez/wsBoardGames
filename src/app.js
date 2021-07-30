@@ -1,5 +1,6 @@
 import express from 'express'
-import boardGames from '../routes/boardgames.routes'
+import boardGamesRoutes from '../routes/boardgames.routes'
+import favoritesRoutes from '../routes/favorites.routes'
 
 const app = express();
 
@@ -11,6 +12,7 @@ app.get('/', (req,res)=> {
 })
 
 //routes
-app.use('/boardgame', boardGames)
+app.use('/boardgame', boardGamesRoutes)
+app.use('/favorites', favoritesRoutes)
 
 export default app
